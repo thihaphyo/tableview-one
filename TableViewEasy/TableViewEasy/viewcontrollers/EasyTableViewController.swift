@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class EasyTableViewController : UIViewController , UITableViewDelegate,UITableViewDataSource {
+class EasyTableViewController : UIViewController {
     
     @IBOutlet weak var tableViewEasy: UITableView!
     override func viewDidLoad() {
@@ -17,8 +17,14 @@ class EasyTableViewController : UIViewController , UITableViewDelegate,UITableVi
         super.viewDidLoad()
     }
     
+    
+}
+
+extension EasyTableViewController : UITableViewDelegate,UITableViewDataSource {
+ 
+    
     /**
-        To Show Row Count in TableView
+     To Show Row Count in TableView
      **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -34,5 +40,4 @@ class EasyTableViewController : UIViewController , UITableViewDelegate,UITableVi
         cell.textLabel?.text = "Row \(indexPath.row)"
         return cell
     }
-    
 }
